@@ -1,0 +1,17 @@
+<template name="profile">
+  <div class="view">
+    <div class="content scroll-content has-header has-tabs">
+      <div class="list">
+        {{#ionRadio value='first'}}
+          First
+        {{/ionRadio}}
+        {{#ionRadio value='second'}}
+          Second
+        {{/ionRadio}}
+        {{#ionRadio value='third' disabled=true}}
+          Third
+        {{/ionRadio}}
+      </div>
+    </div>
+  </div>
+</template>

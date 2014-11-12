@@ -1,0 +1,20 @@
+<template name="_tabBar">
+  {{#ionTabs}}
+    <a class="tab-item tab-item-positive {{ isActiveRoute regex='products.index' }}" href="{{pathFor 'products.index'}}">
+      {{> ionIcon icon='ios7-pulse'}}
+      Trending
+    </a>
+    <a class="tab-item tab-item-positive {{ isActiveRoute regex='products.recent' }}" href="{{pathFor 'products.recent'}}">
+      {{> ionIcon icon='ios7-clock-outline'}}
+      Recent
+    </a>
+    <a class="tab-item tab-item-positive {{ isActiveRoute regex='notifications' }}" href="{{pathFor 'notifications'}}">
+      {{> ionIcon icon='ios7-bolt-outline'}}
+      Notifications
+    </a>
+    <a class="tab-item tab-item-positive {{ isActiveRoute regex='profile' }}" href="{{pathFor 'profile'}}">
+      {{> ionIcon icon='ios7-person-outline'}}
+      Profile
+    </a>
+  {{/ionTabs}}
+</template>

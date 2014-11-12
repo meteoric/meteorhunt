@@ -1,0 +1,11 @@
+<template name="listLayout">
+
+  <div class="{{platformClasses}}">
+    {{> _titleBar}}
+    <div class="nav-container slide-left-right-ios7">
+      {{> yield}}
+    </div>
+    {{> _tabBar}}
+  </div>
+
+</template>

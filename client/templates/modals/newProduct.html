@@ -1,0 +1,26 @@
+<template name="newProduct">
+  {{#ionModalView focusFirstInput=true}}
+    <div class="bar bar-header bar-stable">
+      <button class="button button-clear pull-left button-positive" data-modal-close>{{>ionIcon icon="ios7-close-empty"}}</button>
+      <h1 class="title">New Product</h1>
+    </div>
+    <div class="content has-header">
+      <form>
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Title">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="URL">
+          </label>
+          <label class="item item-input">
+            <textarea placeholder="Description"></textarea>
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive activated">Submit</button>
+        </div>
+      </form>
+    </div>
+  {{/ionModalView}}
+</template>
