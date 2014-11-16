@@ -10,15 +10,15 @@
 
   <div class="view">
     {{#ionContent}}
-      <div class="list">
+      {{#ionList}}
         {{#each products}}
-          <a class="item item-icon-left" href="{{pathFor 'products.show'}}" data-nav-direction="right">
-            <i class="icon ion-arrow-up-c"></i>
+          {{#ionItem path="products.show" iconLeft=true iconRight=true}}
+            {{> ionIcon icon="arrow-up-c" }}
             {{title}}
             <span class="badge badge-positive">{{numberOfComments}}</span>
-          </a>
+          {{/ionItem}}
         {{/each}}
-      </div>
+      {{/ionList}}
     {{/ionContent}}
   </div>
 
