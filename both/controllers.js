@@ -21,6 +21,7 @@ ProductsShowController = AppController.extend({
 });
 
 ProductsRecentController = AppController.extend({
+  layoutTemplate: 'productsLayout',
   data: function() {
     return {
       products: Products.find({})

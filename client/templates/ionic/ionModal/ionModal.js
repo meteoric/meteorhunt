@@ -1,5 +1,6 @@
 IonModal = {
   transitionEndEvent: 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd',
+  animationEndEvent: 'animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd',
   enterClasses: ['ng-enter', 'slide-in-up'],
   enterActiveClass: 'ng-enter-active',
   leaveClasses: ['ng-leave', 'slide-in-up'],
@@ -39,11 +40,29 @@ IonModal = {
 
 Template.ionModal.created = function () {
   this.title = this.data.title;
+  this.focusFirstInput = this.data.focusFirstInput;
+  this.animation = this.data.animation || 'slide-in-up';
+};
+
+Template.ionModal.rendered = function () {
+  if (this.focusFirstInput) {
+    Meteor.setTimeout(function () {
+      this.$('input:first').focus();
+    }.bind(this), 600);
+  }
 };
 
 Template.ionModal.helpers({
   title: function () {
     return Template.instance().title;
+  },
+
+  animation: function () {
+    if (this.animation) {
+      return this.animation;
+    } else {
+      return 'slide-in-up';
+    }
   }
 });
 

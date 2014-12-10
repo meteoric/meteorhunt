@@ -1,5 +1,5 @@
 App.info({
-  name: 'MeteorHunt',
+  name: 'Meteor Hunt',
   description: 'Submit and vote on products made with Meteor',
   author: 'Nick Wientge',
   website: 'http://exygen.io',

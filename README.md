@@ -1,4 +1,4 @@
-# MeteorHunt
+# Meteor Hunt
 
 A [Product Hunt](http://www.producthunt.com/apps/ios) clone built in an attempt to clone [Ionic](http://ionicframework.com/)'s Angular directives to [Meteor Blaze](https://www.meteor.com/blaze). **VERY INCOMPLETE!**
 

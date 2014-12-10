@@ -1,0 +1,2 @@
+[] Allow passing custom animation to modals, refactor `IonModal` singleton
+[] Finish `ionNavigationController` (animation="slide-left-right-ios7")
