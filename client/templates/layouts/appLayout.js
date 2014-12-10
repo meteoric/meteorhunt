@@ -5,6 +5,10 @@ Template.appLayout.events({
   },
 
   'click [data-ion-animate]': function (event, template) {
-    IonNavigationController.currentAnimation = $(event.currentTarget).data('ion-animate');
+    IonNavView.currentAnimation = $(event.currentTarget).data('ion-animate');
   },
+
+  'click [data-nav-direction]': function () {
+    IonNavView.navDirection = $(event.target).data('nav-direction');
+  }
 });

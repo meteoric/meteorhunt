@@ -1,39 +1,52 @@
-IonNavigationController = {
-  currentAnimation: 'slide-in-right',
+IonNavView = {
+  currentAnimation: 'slide-ios',
   animationDuration: 250,
   animationEndEvent: 'animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd'
 };
 
-Template.ionNavigationController.rendered = function () {
+Template.ionNavView.created = function () {
+  IonNavView.animation = 'slide-left-right';
+  if (this.data.animation) {
+    IonNavView.animation = this.data.animation;
+  }
+};
+
+Template.ionNavView.rendered = function () {
   this.find('[data-navigation-container]')._uihooks = {
     insertElement: function(node, next) {
-      if (!IonNavigationController.currentAnimation) {
+      if (!IonNavView.currentAnimation) {
         $(node).insertBefore(next);
         return;
       }
 
-      var classes = ['ng-enter', IonNavigationController.currentAnimation];
+      var classes = ['ng-enter', IonNavView.currentAnimation];
+
+      if (IonNavView.navDirection) {
+        classes.push(IonNavView.navDirection);
+        IonNavView.navDirection = undefined;
+      }
+
       $(node).insertBefore(next).addClass(classes.join(' '));
 
       Meteor.setTimeout(function() {
         $(node).addClass('ng-enter-active');
       }, 10);
 
-      $(node).on(IonNavigationController.animationEndEvent, function () {
+      $(node).on(IonNavView.animationEndEvent, function () {
         $(this).removeClass(classes).removeClass('ng-enter-active').off('webkitAnimationEnd');
-        // IonNavigationController.currentAnimation = null;
+        // IonNavView.currentAnimation = null;
       });
     },
 
     removeElement: function(node) {
-      if (!IonNavigationController.currentAnimation) {
+      if (!IonNavView.currentAnimation) {
         $(node).remove();
         return;
       }
 
       Meteor.setTimeout(function () {
         $(node).remove();
-      }, IonNavigationController.animationDuration);
+      }, IonNavView.animationDuration);
     }
   };
 };
