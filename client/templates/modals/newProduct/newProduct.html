@@ -1,0 +1,20 @@
+<template name="newProduct">
+  {{#ionModal focusFirstInput=true title="New Product"}}
+    <form>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="Title">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="URL">
+        </label>
+        <label class="item item-input">
+          <textarea placeholder="Description"></textarea>
+        </label>
+      </div>
+      <div class="padding">
+        <button type="submit" class="button button-block button-positive activated">Submit</button>
+      </div>
+    </form>
+  {{/ionModal}}
+</template>

@@ -2,21 +2,26 @@
 
   {{#contentFor "navButtonLeft"}}
     <a href="{{pathFor 'products.index'}}" class="button button-clear pull-left button-positive" data-nav-direction="left">
-      {{> ionIcon icon='ios7-arrow-back'}}
+      {{> ionIcon icon='ios-arrow-back'}}
     </a>
   {{/contentFor}}
 
-  <div class="view">
-    {{#ionContent}}
-      <div class="list">
-        <div class="item item-icon-left">
-          <i class="icon ion-arrow-up-c"></i>
-          <h2>{{product.title}}</h2>
-          <p>
-            {{product.description}}
-          </p>
-        </div>
+  {{#contentFor "navButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-ion-modal="shareProduct">
+      {{> ionIcon icon='ios-upload-outline'}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionContent}}
+    <div class="list">
+      <div class="item item-icon-left">
+        <i class="icon ion-arrow-up-c"></i>
+        <h2>{{product.title}}</h2>
+        <p>
+          {{product.description}}
+        </p>
       </div>
-    {{/ionContent}}
-  </div>
+    </div>
+  {{/ionContent}}
+
 </template>

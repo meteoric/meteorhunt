@@ -2,15 +2,8 @@ AppController = RouteController.extend({
   layoutTemplate: 'appLayout'
 });
 
-PageController = AppController.extend({
-
-});
-
-ListController = AppController.extend({
-  layoutTemplate: 'listLayout'
-});
-
-ProductsIndexController = ListController.extend({
+ProductsIndexController = AppController.extend({
+  layoutTemplate: 'productsLayout',
   data: function() {
     return {
       products: Products.find({})
@@ -18,7 +11,8 @@ ProductsIndexController = ListController.extend({
   }
 });
 
-ProductsShowController = ListController.extend({
+ProductsShowController = AppController.extend({
+  layoutTemplate: 'productsLayout',
   data: function() {
     return {
       product: Products.findOne({_id: this.params._id})
@@ -26,7 +20,7 @@ ProductsShowController = ListController.extend({
   }
 });
 
-ProductsRecentController = ListController.extend({
+ProductsRecentController = AppController.extend({
   data: function() {
     return {
       products: Products.find({})
@@ -34,8 +28,8 @@ ProductsRecentController = ListController.extend({
   }
 });
 
-NotificationsController = PageController.extend({
+NotificationsController = AppController.extend({
 });
 
-ProfileController = PageController.extend({
+ProfileController = AppController.extend({
 });

@@ -1,7 +1,27 @@
 <template name="productsRecent">
-  <ul class="list">
-    {{#each products}}
-      <li class="item">{{title}}</li>
-    {{/each}}
-  </ul>
+
+  {{#contentFor "navButtonLeft"}}
+    <button class="button button-clear pull-left button-positive" data-ion-modal="search">
+      {{> ionIcon icon='ios-search'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "navButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-ion-modal="newProduct">
+      {{> ionIcon icon='ios-plus-empty'}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionContent}}
+    {{#ionList}}
+      {{#each products}}
+        {{#ionItem path="products.show" iconLeft=true iconRight=true}}
+          {{> ionIcon icon="arrow-up-c" }}
+          {{title}}
+          <span class="badge badge-positive">{{numberOfComments}}</span>
+        {{/ionItem}}
+      {{/each}}
+    {{/ionList}}
+  {{/ionContent}}
+
 </template>

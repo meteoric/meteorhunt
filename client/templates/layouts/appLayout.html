@@ -1,8 +1,14 @@
 <template name="appLayout">
 
-  <div class="{{platformClasses}}">
+  <div class="ionic-body {{platformClasses}}">
     {{> _titleBar}}
-    {{> yield}}
+
+    {{#if UI.contentBlock}}
+      {{> UI.contentBlock}}
+    {{else}}
+      {{> yield}}
+    {{/if}}
+
     {{> _tabBar}}
   </div>
 

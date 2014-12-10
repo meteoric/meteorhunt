@@ -1,25 +1,27 @@
 <template name="productsIndex">
 
   {{#contentFor "navButtonLeft"}}
-    <button class="button button-clear pull-left button-positive" data-ion-modal="search">{{> ionIcon icon='ios7-search'}}</button>
+    <button class="button button-clear pull-left button-positive" data-ion-modal="search">
+      {{> ionIcon icon='ios-search'}}
+    </button>
   {{/contentFor}}
 
   {{#contentFor "navButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-ion-modal="newProduct">{{> ionIcon icon='ios7-plus-empty'}}</button>
+    <button class="button button-clear pull-right button-positive" data-ion-modal="newProduct">
+      {{> ionIcon icon='ios-plus-empty'}}
+    </button>
   {{/contentFor}}
 
-  <div class="view">
-    {{#ionContent}}
-      {{#ionList}}
-        {{#each products}}
-          {{#ionItem path="products.show" iconLeft=true iconRight=true}}
-            {{> ionIcon icon="arrow-up-c" }}
-            {{title}}
-            <span class="badge badge-positive">{{numberOfComments}}</span>
-          {{/ionItem}}
-        {{/each}}
-      {{/ionList}}
-    {{/ionContent}}
-  </div>
+  {{#ionContent}}
+    {{#ionList}}
+      {{#each products}}
+        {{#ionItem path="products.show" iconLeft=true iconRight=true}}
+          {{> ionIcon icon="arrow-up-c" }}
+          {{title}}
+          <span class="badge badge-positive">{{numberOfComments}}</span>
+        {{/ionItem}}
+      {{/each}}
+    {{/ionList}}
+  {{/ionContent}}
 
 </template>
