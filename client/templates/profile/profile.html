@@ -1,17 +1,27 @@
 <template name="profile">
-  <div class="view">
-    <div class="content scroll-content has-header has-tabs">
-      <div class="list">
-        {{#ionRadio value='first'}}
-          First
-        {{/ionRadio}}
-        {{#ionRadio value='second'}}
-          Second
-        {{/ionRadio}}
-        {{#ionRadio value='third' disabled=true}}
-          Third
-        {{/ionRadio}}
+  {{#contentFor "navButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-ion-modal="settings">
+      {{> ionIcon icon='ios-gear-outline'}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionContent}}
+    {{#with currentUser}}
+
+      <div class="profile-header">
+
+        {{> avatar user=this size="large" shape="circle"}}
+
+        <h3>{{ profile.name }}</h3>
+        <p>
+          <a href="https://atmospherejs.com/{{profile.name}}">
+            <img src="/images/atmosphere-icon.png" width=32 height=32 class="positive" />
+            atmospherejs.com/{{profile.name}}
+          </a>
+        </p>
+
       </div>
-    </div>
-  </div>
+
+    {{/with}}
+  {{/ionContent}}
 </template>

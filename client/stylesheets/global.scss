@@ -4,3 +4,53 @@
 
 // Ionic
 @import "./ionic/ionic.import.scss";
+
+.sign-in-modal {
+  p {
+    margin: 48px 0;
+  }
+}
+
+.sign-in-button img {
+  margin-top: 6px;
+}
+
+.profile-header {
+  background: #27272B url("/images/nodes.png") center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 24px;
+
+  .avatar {
+    margin: 0 auto;
+  }
+
+  h3, p {
+    color: #fff;
+    margin-bottom: 0;
+  }
+
+  a {
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    text-decoration: none;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+}
+
+.avatar {
+  .avatar-image {
+    border: 2px solid #fff;
+  }
+
+  .avatar-initials {
+    border: 2px solid #fff;
+    background: $positive;
+    color: #fff;
+  }
+}

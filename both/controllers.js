@@ -30,6 +30,11 @@ ProductsRecentController = AppController.extend({
 });
 
 NotificationsController = AppController.extend({
+  onAfterAction: function () {
+    if (!Meteor.user()) {
+      IonModal.open('signIn');
+    }
+  }
 });
 
 ProfileController = AppController.extend({

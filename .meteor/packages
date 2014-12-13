@@ -4,6 +4,8 @@
 # but you can also edit it by hand.
 
 meteor-platform
+service-configuration
+accounts-meteor-developer
 autopublish
 insecure
 fourseven:scss
@@ -11,3 +13,5 @@ iron:router@1.0.0
 zimme:iron-router-active
 anti:fake
 mrt:underscore-string-latest
+dburles:collection-helpers
+bengott:avatar

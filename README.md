@@ -3,7 +3,13 @@
 A [Product Hunt](http://www.producthunt.com/apps/ios) clone built in an attempt to clone [Ionic](http://ionicframework.com/)'s Angular directives to [Meteor Blaze](https://www.meteor.com/blaze). **VERY INCOMPLETE!**
 
 ## Why?
-[Ionic](http://ionicframework.com/) is probably the most comprehensive, polished, cross-platform mobile framework available. But unfortunately a large portion of its functionality comes from Angular directives. I'm not a fan of trying to force-fit Angular into Meteor, so I wanted to see if I could rewrite Ionic specifically for Meteor. [Here's a quick blog post]() I wrote about the similarities between Angular directives and Meteor Templates.
+[Ionic](http://ionicframework.com/) is probably the most comprehensive, polished, cross-platform mobile framework available. But unfortunately a large portion of its functionality comes from Angular directives. I'm not a fan of trying to force-fit Angular into Meteor, so I wanted to see if I could rewrite Ionic specifically for Meteor. [Here's a blog post I wrote about the similarities between Angular directives and Meteor Templates](https://medium.com/space-camp/your-meteor-app-probably-doesnt-need-angular-13986a0323f6).
+
+## Running
+
+```
+meteor --setting settings.json
+```
 
 ## TODO
 
@@ -13,19 +19,19 @@ A [Product Hunt](http://www.producthunt.com/apps/ios) clone built in an attempt 
 ### Angular Directives
 * [ ] ActionSheet
 * [ ] Backdrop
-* [ ] Content
+* [x] Content
   * [x] ion-content
-  * [ ] ion-refresher (not necessary with Meteor?)
-  * [ ] ion-pane
+  * [-] ion-refresher (not necessary with Meteor)
+  * [x] ion-pane
 * [ ] Events (use a 3rd party library?)
 * [ ] Form Inputs
   * [ ] ion-checkbox
   * [ ] ion-radio
   * [ ] ion-toggle
 * [ ] Gesture (use a 3rd party library?)
-* [ ] Headers/Footers
+* [x] Headers/Footers
   * [x] ion-header-bar
-  * [ ] ion-footer-bar
+  * [x] ion-footer-bar
 * [ ] Keyboard
 * [ ] Lists
   * [ ] ion-list
@@ -37,8 +43,8 @@ A [Product Hunt](http://www.producthunt.com/apps/ios) clone built in an attempt 
 * [ ] Loading
 * [x] Modal
 * [ ] Navigation (requires iron:router integration)
-  * [ ] ion-nav-view
-  * [ ] ion-view
+  * [x] ion-nav-view
+  * [x] ion-view
   * [ ] ion-nav-bar
   * [ ] ion-nav-buttons
   * [ ] ion-nav-back-button

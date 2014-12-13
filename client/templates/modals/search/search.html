@@ -1,5 +1,12 @@
 <template name="search">
-  {{#ionModal title="Search" animation="fade-explode"}}
-    Search
+  {{#ionModal focusFirstInput=true title="Search"}}
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          {{> ionIcon icon="ios-search" class="placeholder-icon"}}
+          <input type="text" placeholder="Search">
+        </label>
+      </div>
+    </div>
   {{/ionModal}}
 </template>

@@ -1,7 +1,7 @@
 Template.ionHeaderBar.rendered = function () {
   Session.set('hasHeader', true);
 
-  var align = this.data.alignTitle || 'center';
+  var align = this.alignTitle || 'center';
   var $title = this.$('.title');
 
   if (align === 'center') {

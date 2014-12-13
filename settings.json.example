@@ -1,0 +1,15 @@
+{
+  "environment" : "development",
+  "development" : {
+    "meteorDeveloper" : {
+      "clientId" : "<CLIENT_ID_HERE>",
+      "secret" : "<SECRET_HERE>"
+    }
+  },
+  "production" : {
+    "meteorDeveloper" : {
+      "clientId" : "<CLIENT_ID_HERE>",
+      "secret" : "<SECRET_HERE>"
+    }
+  }
+}

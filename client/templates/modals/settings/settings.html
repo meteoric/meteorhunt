@@ -1,0 +1,20 @@
+<template name="settings">
+  {{#ionModal title="Settings"}}
+    <div class="list">
+      <div class="item item-divider">
+        Account
+      </div>
+      <a class="item item-icon-right" href="#" data-action="sign-out">
+        Sign Out
+        {{> ionIcon icon="ios-arrow-right"}}
+      </a>
+      <div class="item item-divider">
+        About
+      </div>
+      <a class="item item-icon-right" href="https://github.com/nickw/meteorhunt">
+        View on Github
+        {{> ionIcon icon="ios-arrow-right"}}
+      </a>
+    </div>
+  {{/ionModal}}
+</template>

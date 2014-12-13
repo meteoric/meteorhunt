@@ -9,9 +9,15 @@ Template.ionNavView.created = function () {
   if (this.data.animation) {
     IonNavView.animation = this.data.animation;
   }
+
+  this.title = this.data.animation;
 };
 
 Template.ionNavView.rendered = function () {
+  if (this.title) {
+
+  }
+
   this.find('[data-navigation-container]')._uihooks = {
     insertElement: function(node, next) {
       if (!IonNavView.currentAnimation) {
@@ -34,7 +40,6 @@ Template.ionNavView.rendered = function () {
 
       $(node).on(IonNavView.animationEndEvent, function () {
         $(this).removeClass(classes).removeClass('ng-enter-active').off('webkitAnimationEnd');
-        // IonNavView.currentAnimation = null;
       });
     },
 
