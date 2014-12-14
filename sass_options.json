@@ -1,0 +1,13 @@
+{
+  "packageIncludePaths": {
+    "packages/meteoric:ionic-sass": [
+      ".sass/packages/meteoric/ionic-sass/"
+    ],
+    "meteoric:ionic-sass": [
+      ".sass/packages/meteoric/ionic-sass/"
+    ],
+    "meteoric:ionicons-sass": [
+      ".sass/packages/meteoric/ionicons-sass/"
+    ]
+  }
+}

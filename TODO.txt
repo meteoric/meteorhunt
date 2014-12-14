@@ -1,2 +1,0 @@
-[] Allow passing custom animation to modals, refactor `IonModal` singleton
-[] Finish `ionNavView` (animation="slide-left-right-ios7")

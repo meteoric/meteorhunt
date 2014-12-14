@@ -1,9 +1,10 @@
 // Custom
-@import './_mixins.import.scss';
-@import './_variables.import.scss';
+@import './_app-mixins.import.scss';
+@import './_app-variables.import.scss';
 
 // Ionic
-@import "./ionic/ionic.import.scss";
+@import "ionic";
+@import "ionicons";
 
 .sign-in-modal {
   p {
