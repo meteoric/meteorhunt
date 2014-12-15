@@ -14,6 +14,6 @@ anti:fake
 mrt:underscore-string-latest
 dburles:collection-helpers
 bengott:avatar
-stevezhu:sass@1.3.2
-meteoric:ionic-sass@0.1.0
-meteoric:ionicons-sass@0.1.0
+stevezhu:sass
+meteoric:ionic-sass
+meteoric:ionicons-sass
