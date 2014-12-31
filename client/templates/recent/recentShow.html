@@ -16,15 +16,9 @@
 
   {{#ionView}}
     {{#ionContent}}
-      <div class="list">
-        <div class="item item-icon-left">
-          <i class="icon ion-arrow-up-c"></i>
-          <h2>{{product.title}}</h2>
-          <p>
-            {{product.description}}
-          </p>
-        </div>
-      </div>
+
+      {{> _productItem product=product}}
+
     {{/ionContent}}
   {{/ionView}}
 

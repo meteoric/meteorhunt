@@ -20,11 +20,7 @@
     {{#ionContent}}
       {{#ionList}}
         {{#each products}}
-          {{#ionItem path="recent.show" iconLeft=true iconRight=true}}
-            {{> ionIcon icon="arrow-up-c" }}
-            {{title}}
-            <span class="badge badge-positive">{{numberOfComments}}</span>
-          {{/ionItem}}
+          {{> _productItem product=this path="recent.show"}}
         {{/each}}
       {{/ionList}}
     {{/ionContent}}

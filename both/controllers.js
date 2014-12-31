@@ -4,15 +4,21 @@ AppController = RouteController.extend({
 
 TrendingController = AppController.extend({
   layoutTemplate: 'trendingLayout',
+  waitOn: function () {
+    return Meteor.subscribe('products');
+  },
   data: function() {
     return {
-      products: Products.find({})
+      products: Products.find({}, {sort: {numberOfVotes: -1}})
     };
   }
 });
 
 TrendingShowController = AppController.extend({
   layoutTemplate: 'trendingLayout',
+  waitOn: function () {
+    return Meteor.subscribe('product', this.params._id);
+  },
   data: function() {
     return {
       product: Products.findOne({_id: this.params._id})
@@ -22,15 +28,21 @@ TrendingShowController = AppController.extend({
 
 RecentController = AppController.extend({
   layoutTemplate: 'recentLayout',
+  waitOn: function () {
+    return Meteor.subscribe('products');
+  },
   data: function() {
     return {
-      products: Products.find({})
+      products: Products.find({}, {sort: {createdAt: -1}})
     };
   }
 });
 
 RecentShowController = AppController.extend({
   layoutTemplate: 'recentLayout',
+  waitOn: function () {
+    return Meteor.subscribe('product', this.params._id);
+  },
   data: function() {
     return {
       product: Products.findOne({_id: this.params._id})

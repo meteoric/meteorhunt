@@ -6,11 +6,12 @@
 meteor-platform
 service-configuration
 accounts-meteor-developer
-autopublish
-insecure
 iron:router@1.0.0
 zimme:iron-router-active
 anti:fake
+matb33:collection-hooks
+aldeed:collection2
+aldeed:autoform
 mrt:underscore-string-latest
 dburles:collection-helpers
 bengott:avatar
