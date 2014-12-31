@@ -6,6 +6,24 @@
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 
+.bar .title {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.empty-view {
+  color: #ccc;
+  text-align: center;
+  padding-top: 160px;
+
+  i {
+    display: block;
+    margin: 0 auto 12px auto;
+    font-size: 60px;
+  }
+}
+
 .sign-in-modal {
   p {
     margin: 48px 0;

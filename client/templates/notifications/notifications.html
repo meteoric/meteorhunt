@@ -1,11 +1,14 @@
 <template name="notifications">
-  <div class="view">
-    <div class="content scroll-content has-header has-tabs">
-      <div class="card">
-        <div class="item item-text-wrap">
-          No notifications yet!
-        </div>
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Notifications</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="empty-view">
+        {{> ionIcon icon="ios-bell"}}
+        No notifications yet!
       </div>
-    </div>
-  </div>
+    {{/ionContent}}
+  {{/ionView}}
 </template>

@@ -1,35 +1,17 @@
 <template name="appLayout">
 
   {{#ionBody}}
-    {{#ionHeaderBar}}
-      {{> yield "navButtonLeft"}}
-      <h1 class="title">Meteor Hunt</h1>
-      {{> yield "navButtonRight"}}
-    {{/ionHeaderBar}}
-
     {{#if UI.contentBlock}}
       {{> UI.contentBlock}}
     {{else}}
       {{> yield}}
     {{/if}}
 
-    {{#ionTabs}}
-      <a class="tab-item tab-item-positive {{ isActiveRoute regex='products.index' }}" href="{{pathFor 'products.index'}}">
-        {{> ionIcon icon='ios-pulse'}}
-        Trending
-      </a>
-      <a class="tab-item tab-item-positive {{ isActiveRoute regex='products.recent' }}" href="{{pathFor 'products.recent'}}">
-        {{> ionIcon icon='ios-clock-outline'}}
-        Recent
-      </a>
-      <a class="tab-item tab-item-positive {{ isActiveRoute regex='notifications' }}" href="{{pathFor 'notifications'}}">
-        {{> ionIcon icon='ios-bolt-outline'}}
-        Notifications
-      </a>
-      <a class="tab-item tab-item-positive {{ isActiveRoute regex='profile' }}" href="{{pathFor 'profile'}}">
-        {{> ionIcon icon='ios-person-outline'}}
-        Profile
-      </a>
+    {{#ionTabs style="ios"}}
+      {{> ionTab title="Trending" path="trending" iconOff="ios-bolt-outline" iconOn="ios-bolt"}}
+      {{> ionTab title="Recent" path="recent" iconOff="ios-clock-outline" iconOn="ios-clock"}}
+      {{> ionTab title="Notifications" path="notifications" iconOff="ios-bell-outline" iconOn="ios-bell"}}
+      {{> ionTab title="Profile" path="profile" iconOff="ios-person-outline" iconOn="ios-person"}}
     {{/ionTabs}}
   {{/ionBody}}
 

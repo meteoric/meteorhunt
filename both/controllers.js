@@ -2,8 +2,8 @@ AppController = RouteController.extend({
   layoutTemplate: 'appLayout'
 });
 
-ProductsIndexController = AppController.extend({
-  layoutTemplate: 'productsLayout',
+TrendingController = AppController.extend({
+  layoutTemplate: 'trendingLayout',
   data: function() {
     return {
       products: Products.find({})
@@ -11,8 +11,8 @@ ProductsIndexController = AppController.extend({
   }
 });
 
-ProductsShowController = AppController.extend({
-  layoutTemplate: 'productsLayout',
+TrendingShowController = AppController.extend({
+  layoutTemplate: 'trendingLayout',
   data: function() {
     return {
       product: Products.findOne({_id: this.params._id})
@@ -20,8 +20,8 @@ ProductsShowController = AppController.extend({
   }
 });
 
-ProductsRecentController = AppController.extend({
-  layoutTemplate: 'productsLayout',
+RecentController = AppController.extend({
+  layoutTemplate: 'recentLayout',
   data: function() {
     return {
       products: Products.find({})
@@ -29,13 +29,19 @@ ProductsRecentController = AppController.extend({
   }
 });
 
-NotificationsController = AppController.extend({
-  onAfterAction: function () {
-    if (!Meteor.user()) {
-      IonModal.open('signIn');
-    }
+RecentShowController = AppController.extend({
+  layoutTemplate: 'recentLayout',
+  data: function() {
+    return {
+      product: Products.findOne({_id: this.params._id})
+    };
   }
 });
 
+NotificationsController = AppController.extend({
+  layoutTemplate: 'notificationsLayout'
+});
+
 ProfileController = AppController.extend({
+  layoutTemplate: 'profileLayout'
 });

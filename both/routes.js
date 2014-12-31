@@ -1,12 +1,16 @@
 Router.route('/', {
-  name: 'products.index'
+  name: 'trending'
 });
-Router.route('/products/:_id', {
-  name: 'products.show'
+Router.route('/trending/:_id', {
+  name: 'trending.show'
 });
 
 Router.route('/recent', {
-  name: 'products.recent'
+  name: 'recent'
+});
+
+Router.route('/recent/:_id', {
+  name: 'recent.show'
 });
 
 Router.route('/notifications', {

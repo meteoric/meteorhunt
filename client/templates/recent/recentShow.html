@@ -1,0 +1,31 @@
+<template name="recentShow">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="recent" class="button-positive" text=""}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-ion-modal="shareProduct">
+      {{> ionIcon icon='ios-upload-outline'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Details</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      <div class="list">
+        <div class="item item-icon-left">
+          <i class="icon ion-arrow-up-c"></i>
+          <h2>{{product.title}}</h2>
+          <p>
+            {{product.description}}
+          </p>
+        </div>
+      </div>
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

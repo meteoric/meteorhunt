@@ -1,8 +1,10 @@
-<template name="productsLayout">
+<template name="recentLayout">
 
   {{#appLayout}}
 
-    {{#ionNavView animation="slide-ios"}}
+    {{> ionNavBar}}
+
+    {{#ionNavView}}
       {{> yield}}
     {{/ionNavView}}
 

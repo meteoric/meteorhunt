@@ -1,18 +1,20 @@
-<template name="productsShow">
+<template name="trendingShow">
 
-  {{#contentFor "navButtonLeft"}}
-    <a href="{{pathFor 'products.index'}}" class="button button-clear pull-left button-positive" data-nav-direction="reverse">
-      {{> ionIcon icon='ios-arrow-back'}}
-    </a>
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="trending" class="button-positive" text=""}}
   {{/contentFor}}
 
-  {{#contentFor "navButtonRight"}}
+  {{#contentFor "headerButtonRight"}}
     <button class="button button-clear pull-right button-positive" data-ion-modal="shareProduct">
       {{> ionIcon icon='ios-upload-outline'}}
     </button>
   {{/contentFor}}
 
-  {{#ionView title="Details" class="view-products-show"}}
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Details</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
     {{#ionContent}}
       <div class="list">
         <div class="item item-icon-left">

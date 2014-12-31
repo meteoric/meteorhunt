@@ -1,4 +1,4 @@
-<template name="productsRecent">
+<template name="recent">
 
   {{#contentFor "headerButtonLeft"}}
     <button class="button button-clear pull-left button-positive" data-ion-modal="search">
@@ -20,7 +20,7 @@
     {{#ionContent}}
       {{#ionList}}
         {{#each products}}
-          {{#ionItem path="products.show" iconLeft=true iconRight=true}}
+          {{#ionItem path="recent.show" iconLeft=true iconRight=true}}
             {{> ionIcon icon="arrow-up-c" }}
             {{title}}
             <span class="badge badge-positive">{{numberOfComments}}</span>
