@@ -5,8 +5,8 @@ Meteor.startup(function() {
         url: 'http://www.' + Fake.word() + '.com',
         name: Fake.sentence(),
         tagline: Fake.sentence(),
-        numberOfVotes: _.random(0, 100),
-        numberOfComments: _.random(0, 20)
+        numberOfVotes: _.random(0, 20),
+        numberOfComments: _.random(0, 12)
       });
     });
   }

@@ -1,0 +1,5 @@
+<template name="newComment">
+  {{#ionModal focusFirstInput=true title="New Comment"}}
+    {{> quickForm collection="Comments" id="comments-new-form" type="insert" omitFields="userId,createdAt" buttonContent="Post Comment"}}
+  {{/ionModal}}
+</template>

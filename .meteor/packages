@@ -6,6 +6,7 @@
 meteor-platform
 service-configuration
 accounts-meteor-developer
+momentjs:moment
 iron:router@1.0.0
 zimme:iron-router-active
 anti:fake

@@ -4,6 +4,12 @@ Products.before.insert(function (userId, doc) {
   doc.createdAt = new Date();
 });
 
+Products.helpers({
+  datePosted: function () {
+    return moment(this.createdAt).format('M/D');
+  }
+});
+
 Products.attachSchema(new SimpleSchema({
   url: {
     type: String,
