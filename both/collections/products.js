@@ -35,6 +35,10 @@ Products.attachSchema(new SimpleSchema({
     },
     max: 200
   },
+  // voterIds: {
+  //   type: Array,
+  //   optional: true
+  // },
   numberOfVotes: {
     type: Number,
     optional: true,

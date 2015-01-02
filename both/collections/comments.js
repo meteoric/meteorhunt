@@ -13,6 +13,12 @@ Comments.attachSchema(new SimpleSchema({
       placeholder: 'Add your comment…'
     }
   },
+  userId: {
+    type: String
+  },
+  productId: {
+    type: String
+  },
   createdAt: {
     type: Date
   }

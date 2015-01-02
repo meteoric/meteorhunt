@@ -13,6 +13,9 @@ Template._voteButton.events({
 
 Template._voteButton.helpers({
   hasVotedClass: function () {
+    if (!Meteor.user()) {
+      return;
+    }
     if(_(Meteor.user().profile.votedProductIds).contains(this._id)) {
       return 'has-voted';
     }

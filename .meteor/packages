@@ -10,6 +10,7 @@ momentjs:moment
 iron:router@1.0.0
 zimme:iron-router-active
 anti:fake
+reywood:publish-composite
 matb33:collection-hooks
 aldeed:collection2
 aldeed:autoform

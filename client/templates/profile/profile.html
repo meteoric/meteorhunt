@@ -13,23 +13,28 @@
 
   {{#ionView}}
     {{#ionContent}}
-      {{#with currentUser}}
+      {{#if user}}
         <div class="profile-header">
-          {{> avatar user=this size="large" shape="circle"}}
-          <h3>{{ profile.name }}</h3>
+          {{> avatar user=user size="large" shape="circle"}}
+          <h3>{{ user.profile.name }}</h3>
           <p>
-            <a href="https://atmospherejs.com/{{profile.name}}">
+            <a href="https://atmospherejs.com/{{user.profile.name}}" target="_blank">
               <img src="/images/atmosphere-icon.png" width=32 height=32 class="positive" />
-              atmospherejs.com/{{profile.name}}
+              atmospherejs.com/{{user.profile.name}}
             </a>
           </p>
         </div>
+        {{#ionList}}
+          {{#each votedProducts}}
+            {{> _productItem product=this path="trending.show"}}
+          {{/each}}
+        {{/ionList}}
       {{else}}
         <div class="empty-view">
           {{> ionIcon icon="ios-person"}}
           No profile yet!
         </div>
-      {{/with}}
+      {{/if}}
     {{/ionContent}}
   {{/ionView}}
 </template>
