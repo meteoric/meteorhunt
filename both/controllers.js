@@ -3,7 +3,6 @@ AppController = RouteController.extend({
 });
 
 TrendingController = AppController.extend({
-  layoutTemplate: 'trendingLayout',
   waitOn: function () {
     return Meteor.subscribe('products');
   },
@@ -15,7 +14,6 @@ TrendingController = AppController.extend({
 });
 
 TrendingShowController = AppController.extend({
-  layoutTemplate: 'trendingLayout',
   waitOn: function () {
     return Meteor.subscribe('product', this.params._id);
   },
@@ -27,7 +25,6 @@ TrendingShowController = AppController.extend({
 });
 
 RecentController = AppController.extend({
-  layoutTemplate: 'recentLayout',
   waitOn: function () {
     return Meteor.subscribe('products');
   },
@@ -39,7 +36,6 @@ RecentController = AppController.extend({
 });
 
 RecentShowController = AppController.extend({
-  layoutTemplate: 'recentLayout',
   waitOn: function () {
     return Meteor.subscribe('product', this.params._id);
   },
@@ -51,11 +47,9 @@ RecentShowController = AppController.extend({
 });
 
 NotificationsController = AppController.extend({
-  layoutTemplate: 'notificationsLayout'
 });
 
 ProfileController = AppController.extend({
-  layoutTemplate: 'profileLayout',
   waitOn: function () {
     if (Meteor.user()) {
       return Meteor.subscribe('votedProducts', Meteor.user());

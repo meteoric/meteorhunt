@@ -1,11 +1,11 @@
 <template name="appLayout">
 
   {{#ionBody}}
-    {{#if UI.contentBlock}}
-      {{> UI.contentBlock}}
-    {{else}}
+    {{> ionNavBar}}
+
+    {{#ionNavView}}
       {{> yield}}
-    {{/if}}
+    {{/ionNavView}}
 
     {{#if isAndroid}}
       {{#ionTabs style="android"}}
