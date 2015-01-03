@@ -13,17 +13,6 @@ TrendingController = AppController.extend({
   }
 });
 
-TrendingShowController = AppController.extend({
-  waitOn: function () {
-    return Meteor.subscribe('product', this.params._id);
-  },
-  data: function () {
-    return {
-      product: Products.findOne({_id: this.params._id})
-    };
-  }
-});
-
 RecentController = AppController.extend({
   waitOn: function () {
     return Meteor.subscribe('products');
@@ -35,7 +24,7 @@ RecentController = AppController.extend({
   }
 });
 
-RecentShowController = AppController.extend({
+ProductsShowController = AppController.extend({
   waitOn: function () {
     return Meteor.subscribe('product', this.params._id);
   },
