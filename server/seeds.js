@@ -6,7 +6,8 @@ Meteor.startup(function() {
         name: Fake.sentence(),
         tagline: Fake.sentence(),
         numberOfVotes: _.random(0, 20),
-        numberOfComments: _.random(0, 12)
+        numberOfComments: _.random(0, 12),
+        createdAt: new Date()
       });
     });
   }
