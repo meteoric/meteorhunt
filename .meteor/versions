@@ -2,7 +2,7 @@ accounts-base@1.1.3
 accounts-meteor-developer@1.0.3
 accounts-oauth@1.1.3
 aldeed:autoform@4.2.2
-aldeed:collection2@2.3.0
+aldeed:collection2@2.3.1
 aldeed:simple-schema@1.1.0
 anti:fake@0.4.1
 application-configuration@1.0.4
@@ -16,7 +16,7 @@ boilerplate-generator@1.0.2
 callback-hook@1.0.2
 check@1.0.3
 coffeescript@1.0.5
-dburles:collection-helpers@1.0.1
+dburles:collection-helpers@1.0.2
 ddp@1.0.13
 deps@1.0.6
 ejson@1.0.5
@@ -34,7 +34,7 @@ iron:dynamic-template@1.0.6
 iron:layout@1.0.6
 iron:location@1.0.6
 iron:middleware-stack@1.0.6
-iron:router@1.0.5
+iron:router@1.0.6
 iron:url@1.0.6
 jparker:crypto-core@0.1.0
 jparker:crypto-md5@0.1.1
@@ -56,7 +56,7 @@ meteoric:ionicons-sass@0.1.4
 minifiers@1.1.3
 minimongo@1.0.6
 mobile-status-bar@1.0.2
-momentjs:moment@2.8.4
+momentjs:moment@2.9.0
 mongo@1.0.11
 mrt:underscore-string-latest@2.3.3
 oauth@1.1.3

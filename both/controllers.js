@@ -48,7 +48,7 @@ ProfileController = AppController.extend({
     if (Meteor.user()) {
       return {
         user: Meteor.user(),
-        votedProducts: Products.find({_id: {$in: Meteor.user().profile.votedProductIds}})
+        votedProducts: Products.find({})
       }
     }
   }
