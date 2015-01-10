@@ -2,8 +2,8 @@ Meteor.startup(function() {
   ServiceConfiguration.configurations.remove({service: 'meteor-developer'});
   ServiceConfiguration.configurations.insert({
     service: 'meteor-developer',
-    clientId: Meteor.settings[Meteor.settings.environment].meteorDeveloper.clientId,
-    secret: Meteor.settings[Meteor.settings.environment].meteorDeveloper.secret
+    clientId: Meteor.settings.meteorDeveloper.clientId,
+    secret: Meteor.settings.meteorDeveloper.secret
   });
 });
 
