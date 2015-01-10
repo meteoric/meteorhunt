@@ -2,6 +2,7 @@ Products = new Mongo.Collection('products');
 
 Products.before.insert(function (userId, doc) {
   doc.createdAt = new Date();
+  doc.profile.votedProductIds = [];
 });
 
 Products.helpers({
