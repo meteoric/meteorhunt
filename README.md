@@ -10,3 +10,5 @@ A [Product Hunt](http://www.producthunt.com/apps/ios) clone built using [meteori
 cp settings.json.example settings.json
 meteor --settings settings.json
 ```
+## License
+[MIT License](https://github.com/meteoric/meteorhunt/blob/master/LICENSE)
