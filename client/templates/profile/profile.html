@@ -24,11 +24,17 @@
             </a>
           </p>
         </div>
-        {{#ionList}}
-          {{#each votedProducts}}
-            {{> _productItem product=this path="products.show"}}
-          {{/each}}
-        {{/ionList}}
+        {{#if thereAreVotedProducts }}
+          {{#ionList}}
+            {{#each votedProducts}}
+              {{> _productItem product=this path="products.show"}}
+            {{/each}}
+          {{/ionList}}
+        {{else}}
+          <div class="empty-view">
+            Oops no votes yet, go checkout some products!
+          </div>
+        {{/if}}
       {{else}}
         <div class="empty-view">
           {{> ionIcon icon="ios-person"}}

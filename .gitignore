@@ -4,3 +4,4 @@ settings.development.json
 settings.production.json
 .sass
 sass_options.json
+.idea

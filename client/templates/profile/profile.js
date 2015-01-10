@@ -3,3 +3,9 @@ Template.profile.rendered = function () {
     IonModal.open('signIn');
   }
 };
+
+Template.profile.helpers({
+  thereAreVotedProducts: function(){
+    return Products.find().fetch().length!==0;
+  }
+});
