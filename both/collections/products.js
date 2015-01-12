@@ -16,6 +16,21 @@ Products.helpers({
   }
 });
 
+RegExp.escape = function(s) {
+  return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+};
+
+Products.search = function(query) {
+  if (!query) {
+    return;
+  }
+  return Products.find({
+    name: { $regex: RegExp.escape(query), $options: 'i' }
+  }, {
+    limit: 20
+  });
+};
+
 Products.attachSchema(new SimpleSchema({
   url: {
     type: String,

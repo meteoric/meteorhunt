@@ -2,6 +2,16 @@ Meteor.publish('products', function() {
   return Products.find();
 });
 
+Meteor.publish('productsSearch', function(query) {
+  check(query, String);
+
+  if (_.isEmpty(query)) {
+    return this.ready();
+  }
+
+  return Products.search(query);
+});
+
 Meteor.publishComposite('product', function(_id) {
   return {
     find: function() {
