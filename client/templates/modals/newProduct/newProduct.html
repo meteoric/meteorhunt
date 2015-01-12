@@ -1,5 +1,5 @@
 <template name="newProduct">
   {{#ionModal focusFirstInput=true title="New Product"}}
-    {{> quickForm collection="Products" id="products-new-form" type="insert" omitFields="numberOfVotes,numberOfComments,createdAt" buttonContent="Post Product"}}
+    {{> quickForm collection="Products" id="products-new-form" type="insert" omitFields="userId,voterIds,numberOfVotes,numberOfComments,createdAt" buttonContent="Post Product"}}
   {{/ionModal}}
 </template>

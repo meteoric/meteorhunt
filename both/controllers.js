@@ -8,7 +8,7 @@ TrendingController = AppController.extend({
   },
   data: function () {
     return {
-      products: Products.find({}, {sort: {numberOfVotes: -1}})
+      products: Products.find({}, {sort: {numberOfVotes: -1, name: -1}})
     };
   }
 });
@@ -19,7 +19,7 @@ RecentController = AppController.extend({
   },
   data: function () {
     return {
-      products: Products.find({}, {sort: {createdAt: -1}})
+      products: Products.find({}, {sort: {createdAt: -1, name: -1}})
     };
   }
 });
