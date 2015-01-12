@@ -1,0 +1,12 @@
+<template name="_profileHeader">
+  <div class="profile-header">
+    {{> avatar user=this size="large" shape="circle"}}
+    <h3>{{ profile.name }}</h3>
+    <p>
+      <a href="https://atmospherejs.com/{{profile.name}}" target="_blank">
+        <img src="/images/atmosphere-icon.png" width=32 height=32 class="positive" />
+        atmospherejs.com/{{profile.name}}
+      </a>
+    </p>
+  </div>
+</template>

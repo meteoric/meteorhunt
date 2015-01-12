@@ -1,0 +1,25 @@
+<template name="usersShow">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Profile</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      {{#with user}}
+        {{> _profileHeader}}
+
+        {{#ionList}}
+          {{#each votedProducts}}
+            {{> _productItem product=this path="products.show"}}
+          {{/each}}
+        {{/ionList}}
+      {{/with}}
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

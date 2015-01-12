@@ -2,12 +2,14 @@ Products = new Mongo.Collection('products');
 
 Products.before.insert(function (userId, doc) {
   doc.createdAt = new Date();
-  doc.profile.votedProductIds = [];
 });
 
 Products.helpers({
   datePosted: function () {
     return moment(this.createdAt).format('M/D');
+  },
+  author: function () {
+    return Meteor.users.findOne({_id: this.userId});
   }
 });
 
@@ -35,6 +37,19 @@ Products.attachSchema(new SimpleSchema({
       placeholder: 'Tagline'
     },
     max: 200
+  },
+  userId: {
+    type: String,
+    autoValue: function () {
+      if (this.isSet) {
+        return;
+      }
+      if (this.isInsert) {
+        return Meteor.userId();
+      } else {
+        this.unset();
+      }
+    }
   },
   // voterIds: {
   //   type: Array,

@@ -30,25 +30,37 @@ ProductsShowController = AppController.extend({
   },
   data: function () {
     return {
-      product: Products.findOne({_id: this.params._id})
+      product: Products.findOne({_id: this.params._id}),
+      comments: Comments.find({productId: this.params._id}, {sort: {createdAt: -1}})
     };
   }
 });
+
+UsersShowController = AppController.extend({
+  waitOn: function () {
+    return Meteor.subscribe('user', this.params._id);
+  },
+  data: function () {
+    return {
+      user: Meteor.users.findOne({_id: this.params._id})
+    }
+  }
+});
+
 
 NotificationsController = AppController.extend({
 });
 
 ProfileController = AppController.extend({
   waitOn: function () {
-    if (Meteor.user()) {
-      return Meteor.subscribe('votedProducts', Meteor.user());
+    if (Meteor.userId()) {
+      return Meteor.subscribe('user', Meteor.userId());
     }
   },
   data: function () {
-    if (Meteor.user()) {
+    if (Meteor.userId()) {
       return {
-        user: Meteor.user(),
-        votedProducts: Products.find({_id: {$in: Meteor.user().profile.votedProductIds}})
+        user: Meteor.user()
       }
     }
   }

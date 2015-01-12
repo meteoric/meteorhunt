@@ -1,4 +1,28 @@
 Meteor.startup(function() {
+  var users = [
+    {
+      emails: [{
+        address: 'nick@exygen.io',
+        verified: false,
+        primary: true
+      }],
+      profile: {
+        name: 'nickw'
+      },
+      services: {
+        'meteor-developer': {
+          id: '2jefqB8rsQ2q3TuRW',
+          username: 'nickw',
+          emails: [{
+            address: 'nick@exygen.io',
+            verified: false,
+            primary: true
+          }]
+        }
+      }
+    }
+  ];
+
   var products = [
     {
       url: 'https://respond.ly/',
@@ -62,38 +86,20 @@ Meteor.startup(function() {
     }
   ];
 
-  // TODO:
-  // var comments = [
-  //   'Looks great!',
-  //   'Really cool app.',
-  //   'I had no idea this was built in Meteor',
-  //   'Super useful app'
-  // ];
-  //
-  // if (Meteor.users.find({}).count() === 0) {
-  //   _(30).times(function (i) {
-  //     var user = Fake.user({
-  //       fields: ['username', 'emails.address']
-  //     });
-  //     Meteor.users.insert({
-  //       username: user.username,
-  //       email: user.emails.address,
-  //       password: 'abc123',
-  //       profile: {
-  //
-  //       }
-  //     });
-  //   });
-  // }
+  if (Meteor.users.find({}).count() === 0) {
+    _(users).each(function (user) {
+      Meteor.users.insert(user);
+    });
+  }
 
+  var author = Meteor.users.find().fetch()[0];
   if (Products.find({}).count() === 0) {
     _(products).each(function (product) {
       Products.insert({
+        userId: author._id,
         url: product.url,
         name: product.name,
         tagline: product.tagline,
-        numberOfVotes: _.random(0, 20),
-        numberOfComments: _.random(0, 12),
         createdAt: new Date()
       });
     });

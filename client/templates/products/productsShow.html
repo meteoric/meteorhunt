@@ -29,6 +29,11 @@
             <p>
               {{tagline}}
             </p>
+            {{#with author}}
+              <p>
+                <small>via <a href="{{pathFor 'users.show'}}" class="dark">{{profile.name}}</a></small>
+              </p>
+            {{/with}}
             <span class="date-posted">
               {{datePosted}}
             </span>
@@ -38,14 +43,20 @@
             <h5>Upvotes <small>{{numberOfVotes}}</small></h5>
           </div>
 
-          <div class="padding product-detail-comments">
-            <h5>Comments</h5>
-            <button class="button button-positive button-small button-circle button-new-comment" data-action="new-comment">
-              {{>ionIcon icon="plus"}}
-            </button>
-          </div>
-
         {{/with}}
+
+        <div class="padding product-detail-comments">
+          <h5>Comments</h5>
+          <button class="button button-positive button-small button-circle button-new-comment" data-action="new-comment">
+            {{>ionIcon icon="plus"}}
+          </button>
+        </div>
+
+        <div class="list">
+          {{#each comments}}
+            {{> _comment}}
+          {{/each}}
+        </div>
 
       </div>
 

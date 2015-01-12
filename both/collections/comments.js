@@ -1,7 +1,9 @@
 Comments = new Mongo.Collection('comments');
 
-Comments.before.insert(function (userId, doc) {
-  doc.createdAt = new Date();
+Comments.helpers({
+  author: function () {
+    return Meteor.users.findOne({_id: this.userId});
+  }
 });
 
 Comments.attachSchema(new SimpleSchema({
@@ -14,12 +16,26 @@ Comments.attachSchema(new SimpleSchema({
     }
   },
   userId: {
-    type: String
+    type: String,
+    autoValue: function () {
+      if (this.isInsert) {
+        return Meteor.userId();
+      } else {
+        this.unset();
+      }
+    }
   },
   productId: {
     type: String
   },
   createdAt: {
-    type: Date
+    type: Date,
+    autoValue: function () {
+      if (this.isInsert) {
+        return new Date();
+      } else {
+        this.unset();
+      }
+    }
   }
 }));

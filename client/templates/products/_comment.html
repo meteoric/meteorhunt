@@ -1,0 +1,13 @@
+<template name="_comment">
+  <div class="item item-text-wrap comment-item">
+    {{#with author}}
+      <a href="{{pathFor 'users.show'}}" class="comment-item-author">
+        {{> avatar user=this size="small" shape="circle"}}
+        {{profile.name}}
+      </a>
+    {{/with}}
+    <p>
+      {{body}}
+    </p>
+  </div>
+</template>

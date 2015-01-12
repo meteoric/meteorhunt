@@ -172,3 +172,26 @@
     color: #fff;
   }
 }
+
+.comment-item {
+  border-top: 0;
+  padding-left: 42px;
+  padding-top: 36px;
+}
+
+a.comment-item-author {
+  display: block;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 8px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  color: $dark;
+
+  .avatar {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

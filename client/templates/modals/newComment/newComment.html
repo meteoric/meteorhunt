@@ -1,5 +1,11 @@
 <template name="newComment">
   {{#ionModal focusFirstInput=true title="New Comment"}}
-    {{> quickForm collection="Comments" id="comments-new-form" type="insert" omitFields="userId,productId,createdAt" buttonContent="Post Comment"}}
+    {{#autoForm collection="Comments" id="comments-new-form" type="insert"}}
+      {{> afQuickField name='productId' type="hidden" value=productId label=false}}
+      {{> afQuickField name='body'}}
+      <div class="padding">
+        <button type="submit" class="button button-positive button-block">Post Comment</button>
+      </div>
+    {{/autoForm}}
   {{/ionModal}}
 </template>
