@@ -51,7 +51,7 @@ Meteor.startup(function() {
     },
     {
       url: 'https://lookback.io/',
-      name: 'Blonk',
+      name: 'LookBack',
       tagline: 'Makes recording mobile user experiences and bugs a breeze.'
     },
     {
