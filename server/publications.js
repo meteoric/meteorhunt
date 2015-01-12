@@ -15,6 +15,11 @@ Meteor.publishComposite('product', function(_id) {
       },
       {
         find: function(product) {
+          return Meteor.users.find({_id: product.voterIds});
+        }
+      },
+      {
+        find: function(product) {
           return Comments.find({productId: product._id});
         },
         children: [

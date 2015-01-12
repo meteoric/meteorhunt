@@ -41,6 +41,11 @@
 
           <div class="padding product-detail-upvotes">
             <h5>Upvotes <small>{{numberOfVotes}}</small></h5>
+            {{#each voters}}
+              <a href="{{pathFor 'users.show'}}">
+                {{> avatar user=this size="small" shape="circle"}}
+              </a>
+            {{/each}}
           </div>
 
         {{/with}}

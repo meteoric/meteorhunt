@@ -8,7 +8,7 @@ Meteor.methods({
       return;
     }
 
-    Products.update({_id: _id}, {$inc: {numberOfVotes: 1}});
+    Products.update({_id: _id}, {$inc: {numberOfVotes: 1}, $addToSet: {voterIds: this.userId}});
     Meteor.users.update({_id: this.userId}, {$addToSet: {'profile.votedProductIds': _id}});
   }
 });

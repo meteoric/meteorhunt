@@ -10,6 +10,9 @@ Products.helpers({
   },
   author: function () {
     return Meteor.users.findOne({_id: this.userId});
+  },
+  voters: function () {
+    return Meteor.users.find({_id: {$in: this.voterIds}});
   }
 });
 
@@ -51,10 +54,11 @@ Products.attachSchema(new SimpleSchema({
       }
     }
   },
-  // voterIds: {
-  //   type: Array,
-  //   optional: true
-  // },
+  voterIds: {
+    type: [String],
+    optional: true,
+    defaultValue: []
+  },
   numberOfVotes: {
     type: Number,
     optional: true,
