@@ -1,5 +1,16 @@
 <template name="newProduct">
-  {{#ionModal focusFirstInput=true title="New Product"}}
-    {{> quickForm collection="Products" id="products-new-form" type="insert" omitFields="userId,voterIds,numberOfVotes,numberOfComments,createdAt" buttonContent="Post Product"}}
+  {{#ionModal customTemplate=true}}
+    {{# autoForm collection="Products" id="products-new-form" type="insert"}}
+      <div class="bar bar-header bar-stable">
+        <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
+        <h2 class="title">New Product</h2>
+        <button type="submit" class="button button-positive button-clear">Post</button>
+      </div>
+      <div class="content has-header overflow-scroll">
+        {{> afQuickField name="url" type="url"}}
+        {{> afQuickField name="name"}}
+        {{> afQuickField name="tagline"}}
+      </div>
+    {{/autoForm}}
   {{/ionModal}}
 </template>

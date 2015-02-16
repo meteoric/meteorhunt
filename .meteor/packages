@@ -17,8 +17,8 @@ aldeed:autoform
 mrt:underscore-string-latest
 dburles:collection-helpers
 bengott:avatar
-fourseven:scss
 meteoric:ionic-sass
 meteoric:ionicons-sass
 meteoric:ionic
 meteoric:autoform-ionic
+reactive-var

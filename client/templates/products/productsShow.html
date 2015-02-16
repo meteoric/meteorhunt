@@ -47,14 +47,15 @@
               </a>
             {{/each}}
           </div>
-
         {{/with}}
 
         <div class="padding product-detail-comments">
           <h5>Comments</h5>
-          <button class="button button-positive button-small button-circle button-new-comment" data-action="new-comment">
-            {{>ionIcon icon="plus"}}
-          </button>
+          {{#with product}}
+            <button class="button button-positive button-small button-circle button-new-comment" data-action="new-comment">
+              {{>ionIcon icon="plus"}}
+            </button>
+          {{/with}}
         </div>
 
         <div class="list">
